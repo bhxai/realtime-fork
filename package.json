@@ -1,12 +1,11 @@
 {
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js --dev",
+    "dev": "vite",
     "start": "node server.js",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --outDir dist/server --ssr /index.js",
-    "devinstall": "zx ../../devinstall.mjs -- node server.js --dev",
+    "build": "vite build --outDir dist/client",
+    "preview": "vite preview --port 3000",
+    "dev:full": "nodemon server.js --dev",
     "lint": "eslint . --ext .js,.jsx --fix"
   },
   "dependencies": {
