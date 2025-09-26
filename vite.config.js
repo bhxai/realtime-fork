@@ -5,9 +5,15 @@ import path from 'path';
 export default defineConfig({
   root: './client',
   publicDir: 'public',
+  base: '/',
   build: {
-    outDir: '../dist/client',
+    outDir: '../dist',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, './client/index.html'),
+      },
+    },
   },
   plugins: [react()],
   resolve: {

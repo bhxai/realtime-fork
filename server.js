@@ -11,8 +11,8 @@ app.use(express.text());
 const port = process.env.PORT || 3000;
 const apiKey = process.env.OPENAI_API_KEY;
 
-// Serve static files from the dist/client directory
-app.use(express.static(path.join(__dirname, 'dist/client')));
+// Serve static files from the dist directory
+app.use(express.static(path.join(__dirname, 'dist')));
 
 const sessionConfig = JSON.stringify({
   session: {
@@ -73,7 +73,7 @@ app.get("/token", async (req, res) => {
 
 // Serve index.html for all other routes to support client-side routing
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/client', 'index.html'));
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(port, () => {

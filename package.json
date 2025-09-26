@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "vite",
     "start": "node server.js",
-    "build": "vite build --outDir dist/client",
+    "build": "vite build",
     "preview": "vite preview --port 3000",
     "dev:full": "nodemon server.js --dev",
     "lint": "eslint . --ext .js,.jsx --fix"
